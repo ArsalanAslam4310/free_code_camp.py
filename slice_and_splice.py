@@ -1,13 +1,17 @@
-def franken_Splice(arr1, arr2, n):
+def franken_Splice(arr1, arr2,n):
     '''
     put the value at n index
     '''
     new=[]
-    x=arr1+arr2
-    x.insert(1,n)
-    new.append(x)
-    return new
 
-li=[1,3,4]
-li1=[5,6]
-print(franken_Splice(li,li1,2))
+    for i in range(len(arr2)):
+        new.append(arr2[i])
+        for j in range(len(arr1)):
+            n=arr1[j]
+            new.append(n)
+        new.append(arr2[i+1])
+        return new
+
+li=[1,2,3]
+li1=[4,5]
+print(franken_Splice(li,li1,1)) 
