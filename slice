@@ -1,0 +1,12 @@
+def franken_Splice(arr1, arr2, n):
+    '''
+    put the value at n index
+    '''
+    for i in range(len(arr1)):
+        arr2.insert(1,n)
+
+        return arr2
+
+li=[3,2,1]
+li1=[4,5]
+print(franken_Splice(li,li1,li))
