@@ -1,10 +1,12 @@
 def title_case(string):
-    string=string.lower()
+    string = list(string.lower())
+    string[0] = string[0].upper()
     for i in range(len(string)):
         if string[i] == " ":
-            string[i+1].upper()
-    return string
+            string[i+1] = string[i+1].upper()
 
-string="I'm a little tea pot"
+    return "".join(string)
+
+
+string = "I'm a little tea pot"
 print(title_case(string))
-
