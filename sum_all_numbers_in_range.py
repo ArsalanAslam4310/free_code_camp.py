@@ -4,7 +4,7 @@ def sum_all(lis):
     '''
     sum = 0
     
-    for i in range(lis[0],lis[1]):
+    for i in range(lis[0],lis[1]+1):
         sum = sum +i
 
     return sum 
