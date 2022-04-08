@@ -7,6 +7,8 @@ def diff_array(lis1,lis2):
     for i in range(len(lis1)):
         if lis1[i] not in lis2:
             new.append(lis1[i])
+         if lis2[i] not in lis1
+            new.append(lis2)
     return new
 
 
