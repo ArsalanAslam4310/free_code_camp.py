@@ -1,9 +1,15 @@
-def destroyer(arr,*args):
-    new=[]
+ from unsorted_search import linear_search
 
-    for i in range(len(arr)):
-        arr.remove(*args)
-        new.append(arr)
-        return new
 
-print(destroyer([1, 2, 3, 1, 2, 3],2))
+def destroyer(arr, *nums):
+    new = []
+
+    for num in nums:
+        while linear_search(arr, num):
+            arr.remove(num)
+
+    new.append(arr)
+    return new
+
+
+print(destroyer([1, 2, 3, 1, 2, 3], 2, 3))
