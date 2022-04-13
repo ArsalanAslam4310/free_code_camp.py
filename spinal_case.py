@@ -1,9 +1,17 @@
 def spinal_case(string):
-    string=string.lower()
-
+    beginning = 0
+    lis = []
     for i in range(len(string)-1):
-        if string[i]==" ":
-            return string.replace("_","-")
+        if string[i] == " " or string[i] == "_":
+            return string.replace(string[i], '-').lower()
+        elif string[i].isupper() and i != 0:
+            lis.append(string[beginning:i])
+            beginning = i
+    if lis:
+        return '-'.join(lis).lower()
 
-strings="The_Andy_Griffith_Show"
-print(spinal_case(strings))
+    
+
+
+string = "thisIsSpinalTap"
+print(spinal_case(string))
