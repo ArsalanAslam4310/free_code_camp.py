@@ -1,14 +1,15 @@
 def pig_latin(string):
+    string=list(string)
     
-    for i in range(len(string)):
-        if string[0]=="b,c,d,f,g,h,j,k,l,m,n,p,q,r,t,v,w,x,y,z":
-            string+= string[0]+"ay"
-            string=string.pop(0)
-        else:
-            string+= string[0]+ "way"
-            string=string.pop(0)
+    
+    if string[0]=="a,e,i,o,u,s":
+        string+= string[0]+"way"
+        string=string.pop(0)
+    else:
+        string+= string[0]+ "ay"
+        string.pop(0)
+    string = ''.join(string)
+    return string
 
-        return string
-
-x="eight"
-print(pig_latin(x))
+string="paragraphs"
+print(pig_latin(string))
