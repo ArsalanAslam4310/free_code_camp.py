@@ -1,15 +1,30 @@
+def is_vowel(char):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    if len(char) > 1:
+        print("Invalid input!")
+        return None
+    if char in vowels:
+        return True
+    return False
+
+
 def pig_latin(string):
-    string=list(string)
-    
-    
-    if string[0]=="a,e,i,o,u,s":
-        string+= string[0]+"way"
-        string=string.pop(0)
+
+    if is_vowel(string[0]):
+        string += "way"
     else:
-        string+= string[0]+ "ay"
-        string.pop(0)
-    string = ''.join(string)
+        fragment = ''
+        for char in string:
+            if not is_vowel(char):
+                fragment += char
+            else:
+                break
+
+        string = string.replace(fragment, '')
+        string += fragment + "ay"
+
     return string
 
-string="paragraphs"
+
+string = "schwartz"
 print(pig_latin(string))
