@@ -1,12 +1,24 @@
-number=int(input("Enter a number"))
-sum=0
-for num in range(0,number+1):
-    i=1
-    for i in range(2,num):
-        if(int(num%i==0)):
-            i=num
-            break
+from cmath import sqrt
 
-    if i is not num:
-        sum+=num
-print(sum)
+
+from math import sqrt
+
+
+def is_prime(num: int) -> bool:
+    if num <= 1:
+        return False
+    for i in range(2, int(round(sqrt(num)))+1):
+        if num % i == 0:
+            return False
+    return True
+
+
+def sum_primes(num):
+    sum = 0
+    for i in range(num+1):
+        if is_prime(i):
+            sum += i
+    return sum
+
+
+print(sum_primes(977))
