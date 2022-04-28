@@ -1,12 +1,15 @@
-def unite_unique(list_of_numbers):
+def unite_unique(*lists):
     '''
     Find unique value in list
     '''
-    new=[]
-    for i in range(len(list_of_numbers)):
-        if list_of_numbers[i] not in new:
-            new.append(list_of_numbers[i])
+    new = []
+    for lis in lists:
+        for num in lis:
+            if num not in new:
+                new.append(num)
+
     return new
 
-lis=[1,2,4,3,1,2]
-print(unite_unique(lis))
+
+print(unite_unique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]))
+
