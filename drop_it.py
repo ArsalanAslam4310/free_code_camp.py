@@ -1,17 +1,17 @@
-def elemnt(lis,num):
+def drop_elements(lis, func):
     '''
     Drop number in list
     '''
-    new=[]
-    
-    for i in range(len(lis)):
-        if lis[i]>=num:
-            new.append(lis[i])
+    new = []
+    for num in lis:
+        if func(num):
+            new.append(num)
     return new
 
-li=[1,2,3,4,5,6,1,2]
-print(elemnt(li,4))
 
+lis = [1, 2, 3, 4, 5, 6, 1, 2]
+lis = drop_elements(lis, lambda n: n >= 3)
+print(lis)
 
 
 
